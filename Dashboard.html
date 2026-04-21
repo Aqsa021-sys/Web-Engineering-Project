@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: #eef2ff;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark px-3">
+<a class="navbar-brand">Dashboard</a>
+
+<div>
+<a href="index.html" class="text-white me-3">Home</a>
+<a href="courses.html" class="text-white me-3">Courses</a>
+<a href="feedback.html" class="text-white">Feedback</a>
+</div>
+</nav>
+
+<div class="container mt-4">
+
+<div class="card p-4 text-center">
+<h3>👋 Welcome Student</h3>
+<p>Manage your learning easily</p>
+
+<button class="btn btn-primary" onclick="showTime()">Show Date & Time</button>
+<p id="time"></p>
+</div>
+
+</div>
+
+<script>
+function showTime(){
+document.getElementById("time").innerText = new Date();
+}
+</script>
+
+</body>
+</html>
