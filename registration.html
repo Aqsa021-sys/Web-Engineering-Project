@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(120deg, #e0e7ff, #f0fdfa);
+}
+
+.form-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="col-md-6 mx-auto form-box">
+
+<h3 class="text-center">Student Registration</h3>
+
+<form onsubmit="return validateForm()">
+
+<input id="name" class="form-control mb-2" placeholder="Name">
+<input id="email" class="form-control mb-2" placeholder="Email">
+<input id="pass" type="password" class="form-control mb-2" placeholder="Password">
+<input id="cpass" type="password" class="form-control mb-2" placeholder="Confirm Password">
+<input id="age" class="form-control mb-2" placeholder="Age">
+
+<select id="gender" class="form-control mb-3">
+<option value="">Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<button class="btn btn-primary w-100">Register</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+function validateForm(){
+
+let n = document.getElementById("name").value;
+let e = document.getElementById("email").value;
+let p = document.getElementById("pass").value;
+let cp = document.getElementById("cpass").value;
+let a = document.getElementById("age").value;
+let g = document.getElementById("gender").value;
+
+if(n==""||e==""||p==""||cp==""||a==""||g==""){
+alert("All fields required");
+return false;
+}
+
+if(!e.includes("@")){
+alert("Invalid email");
+return false;
+}
+
+if(p != cp){
+alert("Passwords not matched");
+return false;
+}
+
+if(isNaN(a)){
+alert("Age must be number");
+return false;
+}
+
+window.location.href = "dashboard.html";
+return false;
+}
+</script>
+
+</body>
+</html>
